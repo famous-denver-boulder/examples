@@ -1,11 +1,15 @@
-angular.module('integrationApp',['famous.angular', 'ui.router'])
-  .config(function($stateProvider, $urlRouterProvider){
+angular.module('integrationApp', ['famous.angular', 'ui.router'])
+  .config(function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise("/lock-screen");
+    $urlRouterProvider.otherwise("/list");
     $stateProvider
       .state("lock-screen", {
         url: "/lock-screen",
         templateUrl: "views/lock-screen.html"
+      })
+      .state("list", {
+        url: "/list",
+        templateUrl: "views/list.html"
       })
       .state("animate", {
         url: "/animate",
@@ -60,12 +64,12 @@ angular.module('integrationApp',['famous.angular', 'ui.router'])
         url: "/ng-class",
         templateUrl: "views/ng-class.html",
         controller: "NgClassCtrl"
-      }) 
+      })
       .state("render-node", {
         url: "/render-node",
         templateUrl: "views/render-node.html",
         controller: "RenderNodeCtrl"
-      }) 
+      })
       .state("header-footer-layout", {
         url: "/header-footer-layout",
         templateUrl: "views/header-footer-layout.html",
@@ -80,20 +84,20 @@ angular.module('integrationApp',['famous.angular', 'ui.router'])
         url: "/nested-scroll-view",
         templateUrl: "views/nested-scroll-view.html",
         controller: "NestedScrollViewCtrl"
-      }) 
+      })
       .state("perspective", {
         url: "/perspective",
         templateUrl: "views/perspective.html",
         controller: "PerspectiveCtrl"
-      }) 
+      })
       .state("flexible-layout", {
         url: "/flexible-layout",
         templateUrl: "views/flexible-layout.html",
         controller: "FlexibleLayoutCtrl"
-      }) 
+      })
       .state("flipper", {
         url: "/flipper",
         templateUrl: "views/flipper.html",
         controller: "FlipperCtrl"
       });
-    });
+  });
